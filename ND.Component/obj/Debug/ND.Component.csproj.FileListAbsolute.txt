@@ -1,0 +1,11 @@
+D:\test Project\ND.Component\ND.Component\bin\Debug\ND.Component.dll
+D:\test Project\ND.Component\ND.Component\bin\Debug\ND.Component.pdb
+D:\test Project\ND.Component\ND.Component\obj\Debug\ND.Component.dll
+D:\test Project\ND.Component\ND.Component\obj\Debug\ND.Component.pdb
+D:\test Project\ND.Component\ND.Component\bin\Debug\Newtonsoft.Json.dll
+D:\test Project\ND.Component\ND.Component\bin\Debug\Newtonsoft.Json.xml
+D:\ND.Application\ND.Component\ND.Component\bin\Debug\ND.Component.dll
+D:\ND.Application\ND.Component\ND.Component\bin\Debug\ND.Component.pdb
+D:\ND.Application\ND.Component\ND.Component\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.Component\ND.Component\obj\Debug\ND.Component.dll
+D:\ND.Application\ND.Component\ND.Component\obj\Debug\ND.Component.pdb

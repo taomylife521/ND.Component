@@ -1,0 +1,22 @@
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.Log.NLog.dll
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.Log.NLog.pdb
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.dll
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\NLog.dll
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.pdb
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\NLog.xml
+D:\test Project\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.csprojResolveAssemblyReference.cache
+D:\test Project\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.dll
+D:\test Project\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.pdb
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\Newtonsoft.Json.dll
+D:\test Project\ND.Component\ND.Component.Log.NLog\bin\Debug\Newtonsoft.Json.xml
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.Log.NLog.dll
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.Log.NLog.pdb
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.dll
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\NLog.dll
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.pdb
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\NLog.xml
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\bin\Debug\Newtonsoft.Json.xml
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.csprojResolveAssemblyReference.cache
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.dll
+D:\ND.Application\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.pdb

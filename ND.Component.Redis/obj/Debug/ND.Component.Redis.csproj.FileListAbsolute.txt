@@ -1,0 +1,9 @@
+D:\ND.Application\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.csprojResolveAssemblyReference.cache
+D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.Redis.dll
+D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.Redis.pdb
+D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.dll
+D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\StackExchange.Redis.dll
+D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.pdb
+D:\ND.Application\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.dll
+D:\ND.Application\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.pdb

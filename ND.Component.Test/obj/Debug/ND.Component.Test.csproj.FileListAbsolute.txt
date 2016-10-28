@@ -1,0 +1,36 @@
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Test.exe.config
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\NLog.config
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Test.exe
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Test.pdb
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\ND.Component.dll
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Log.NLog.dll
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\NLog.dll
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Log.NLog.pdb
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\ND.Component.pdb
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\NLog.xml
+D:\test Project\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.csprojResolveAssemblyReference.cache
+D:\test Project\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.exe
+D:\test Project\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.pdb
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\Newtonsoft.Json.dll
+D:\test Project\ND.Component\ND.Component.Test\bin\Debug\Newtonsoft.Json.xml
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\NLog.config
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\log4net.config
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Test.exe.config
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Test.exe
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Test.pdb
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\log4net.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Log.Log4Net.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Log.NLog.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\NLog.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Log.Log4Net.pdb
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Log.NLog.pdb
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.pdb
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\NLog.xml
+D:\ND.Application\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.csprojResolveAssemblyReference.cache
+D:\ND.Application\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.exe
+D:\ND.Application\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.pdb
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Redis.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\StackExchange.Redis.dll
+D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Redis.pdb

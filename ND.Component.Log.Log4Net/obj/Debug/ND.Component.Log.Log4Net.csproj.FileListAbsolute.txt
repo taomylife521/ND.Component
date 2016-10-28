@@ -1,0 +1,10 @@
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.Log.Log4Net.dll
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.Log.Log4Net.pdb
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\log4net.dll
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.dll
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.pdb
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\Newtonsoft.Json.xml
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.csprojResolveAssemblyReference.cache
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.dll
+D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.pdb

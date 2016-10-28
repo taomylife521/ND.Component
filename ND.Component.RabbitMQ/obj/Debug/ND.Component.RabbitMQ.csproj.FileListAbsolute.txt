@@ -1,0 +1,9 @@
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.csprojResolveAssemblyReference.cache
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.RabbitMQ.dll
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.RabbitMQ.pdb
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.dll
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\RabbitMQ.Client.dll
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\Newtonsoft.Json.dll
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.pdb
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.dll
+D:\ND.Application\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.pdb
