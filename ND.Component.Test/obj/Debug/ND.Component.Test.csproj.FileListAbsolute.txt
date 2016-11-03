@@ -34,3 +34,6 @@ D:\ND.Application\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.pdb
 D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Redis.dll
 D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\StackExchange.Redis.dll
 D:\ND.Application\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Redis.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Test.exe.config
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.exe
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\obj\Debug\ND.Component.Test.pdb
