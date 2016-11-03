@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ND.Component.RabbitMQ
 {
+    //wuyong
     public class Class1
     {
     }
