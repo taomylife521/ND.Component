@@ -35,6 +35,7 @@
       <HintPath>dll\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,7 +44,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caching\CacheBase.cs" />
+    <Compile Include="Caching\CacheExpire.cs" />
+    <Compile Include="Caching\CacheKeyMapDescriptor.cs" />
+    <Compile Include="Caching\CacheManger.cs" />
+    <Compile Include="Caching\CacheStatus.cs" />
+    <Compile Include="Caching\ICache.cs" />
+    <Compile Include="ComponentBuilder\DefaultComponentBuilder.cs" />
+    <Compile Include="ComponentBuilder\IComponentBuilder.cs" />
+    <Compile Include="Config\CacheConfigProvider.cs" />
+    <Compile Include="Config\CacheProviderItem.cs" />
+    <Compile Include="Config\ConfigComponentFactory.cs" />
+    <Compile Include="Config\IConfigBuilder.cs" />
+    <Compile Include="Config\LogConfigProvider.cs" />
+    <Compile Include="Config\MessageBusConfigProvider.cs" />
+    <Compile Include="Config\ConfigProviderBase.cs" />
+    <Compile Include="Config\QueueConfigProvider.cs" />
+    <Compile Include="Config\XmlConfigBuilder.cs" />
+    <Compile Include="Extentions\ObjectExtensions.cs" />
     <Compile Include="Extentions\TaskExtensions.cs" />
+    <Compile Include="LoadBalance\HashBalance.cs" />
+    <Compile Include="LoadBalance\IBalance.cs" />
+    <Compile Include="LoadBalance\LoadBalanceFactory.cs" />
+    <Compile Include="LoadBalance\Server.cs" />
+    <Compile Include="LoadBalance\WeightedRoundBalance.cs" />
     <Compile Include="Log\INDLogger.cs" />
     <Compile Include="Log\INDLoggerFactory.cs" />
     <Compile Include="Log\AbsNDLogger.cs" />
@@ -63,18 +87,19 @@
     <Compile Include="MessageBus\NullMessageBus.cs" />
     <Compile Include="Utility\EmptyDisposable.cs" />
     <Compile Include="Utility\MaintenanceBase.cs" />
+    <Compile Include="Config\NDComponentConfig.cs" />
     <Compile Include="Utility\Run.cs" />
     <Compile Include="Utility\TypeHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="Log\packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Caching\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="dll\Newtonsoft.Json.dll" />
+    <Content Include="NDComponent.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
