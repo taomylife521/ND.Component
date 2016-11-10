@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentBuilderExtension.cs" />
     <Compile Include="CustomFileLogger.cs" />
     <Compile Include="CustomFileLoggerFactory.cs" />
     <Compile Include="NLogLogger.cs" />
