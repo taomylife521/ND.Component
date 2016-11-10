@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NDComponent>
+  <!--CacheProvider-->
+  <cacheprovider dbname="CacheDB" tablename="TestCache">
+
+    <!--当前节点只能有一个-->
+    <!--<provider name="redis" isenabled="false">
+      <provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>
+      <provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>
+      <provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>
+    </provider>-->
+
+    <provider name="mongodb" isenabled="true">
+      <provideritem  connstr="mongodb://192.168.1.104:27017" weightvalue="1" isenabled="true"/>
+      <!--<provideritem  connstr="mongodb://localhost:27017" weightvalue="1" isenabled="true"/>-->
+      <!--<provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>-->
+    </provider>
+
+  </cacheprovider>
+
+  <!--MessageBusComponent-->
+  <messagebusprovider>
+    <messagebusprovider name="rabbitmq" isenabled="true">
+      <messagebusitem name="102" connstr="localhost:6379" weightvalue="1" isenabled="true"/>
+      <messagebusitem name="103" connstr="localhost:6379" weightvalue="1" isenabled="true"/>
+      <messagebusitem name="104" connstr="localhost:6379" weightvalue="1" isenabled="true"/>
+    </messagebusprovider>
+  </messagebusprovider>
+  
+</NDComponent>

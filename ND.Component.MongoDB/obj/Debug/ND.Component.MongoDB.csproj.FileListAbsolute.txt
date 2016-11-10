@@ -1,0 +1,10 @@
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\obj\Debug\ND.Component.MongoDB.csprojResolveAssemblyReference.cache
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\bin\Debug\ND.Component.MongoDB.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\bin\Debug\ND.Component.MongoDB.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\bin\Debug\MongoDB.Bson.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\bin\Debug\MongoDB.Driver.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\bin\Debug\ND.Component.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\bin\Debug\Newtonsoft.Json.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\bin\Debug\ND.Component.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\obj\Debug\ND.Component.MongoDB.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.MongoDB\obj\Debug\ND.Component.MongoDB.pdb
