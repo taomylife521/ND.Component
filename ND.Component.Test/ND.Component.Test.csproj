@@ -57,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="NDComponent.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -76,6 +79,10 @@
     <ProjectReference Include="..\ND.Component.Log.NLog\ND.Component.Log.NLog.csproj">
       <Project>{7c89ebc1-5073-4acb-9847-b8a7f60fc4ec}</Project>
       <Name>ND.Component.Log.NLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ND.Component.MongoDB\ND.Component.MongoDB.csproj">
+      <Project>{bac31927-e9e4-4f7f-9eea-d364f02d322d}</Project>
+      <Name>ND.Component.MongoDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\ND.Component.Redis\ND.Component.Redis.csproj">
       <Project>{a0e7a841-dadd-4cd3-881d-8f27f731578f}</Project>
