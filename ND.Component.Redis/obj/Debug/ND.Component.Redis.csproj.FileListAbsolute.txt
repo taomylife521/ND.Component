@@ -7,3 +7,12 @@ D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\StackExchange.Redis.
 D:\ND.Application\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.pdb
 D:\ND.Application\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.dll
 D:\ND.Application\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.Redis.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.Redis.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\bin\Debug\Newtonsoft.Json.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\bin\Debug\StackExchange.Redis.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\bin\Debug\ND.Component.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.csprojResolveAssemblyReference.cache
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Redis\obj\Debug\ND.Component.Redis.pdb

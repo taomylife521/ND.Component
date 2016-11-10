@@ -7,3 +7,12 @@ D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\Newtonsoft.Json.d
 D:\ND.Application\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.pdb
 D:\ND.Application\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.dll
 D:\ND.Application\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.RabbitMQ.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.RabbitMQ.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\Newtonsoft.Json.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\RabbitMQ.Client.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.csprojResolveAssemblyReference.cache
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.pdb

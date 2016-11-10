@@ -8,3 +8,13 @@ D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\bin\Debug\Newtonsoft.Jso
 D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.csprojResolveAssemblyReference.cache
 D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.dll
 D:\ND.Application\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.Log.Log4Net.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.Log.Log4Net.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\bin\Debug\log4net.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\bin\Debug\Newtonsoft.Json.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\bin\Debug\ND.Component.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\bin\Debug\Newtonsoft.Json.xml
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.csprojResolveAssemblyReference.cache
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Log.Log4Net\obj\Debug\ND.Component.Log.Log4Net.pdb

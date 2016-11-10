@@ -18,3 +18,23 @@ D:\ND.Application\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debu
 D:\ND.Application\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.Log.NLog.pdb
 D:\ND.Application\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\NLog.xml
 D:\ND.Application\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\NLog.config
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\NLog.config
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.MessageBusSubscriber.exe.config
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.MessageBusSubscriber.exe
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.MessageBusSubscriber.pdb
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.Log.NLog.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.RabbitMQ.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.Redis.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\RabbitMQ.Client.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\StackExchange.Redis.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\NLog.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\Newtonsoft.Json.dll
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.Log.NLog.pdb
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.RabbitMQ.pdb
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.Redis.pdb
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\ND.Component.pdb
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\bin\Debug\NLog.xml
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\obj\Debug\ND.Component.MessageBusSubscriber.csprojResolveAssemblyReference.cache
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\obj\Debug\ND.Component.MessageBusSubscriber.exe
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusSubscriber\obj\Debug\ND.Component.MessageBusSubscriber.pdb
