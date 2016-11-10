@@ -39,7 +39,7 @@ namespace ND.Component.Caching
         /// <summary>
         /// 缓存限制
         /// </summary>
-        public Cachelimit Cachelimit { get { return _cachelimit; } set { _cachelimit = value; } }
+       // public Cachelimit Cachelimit { get { return _cachelimit; } set { _cachelimit = value; } }
 
         /// <summary>
         /// 缓存时间
@@ -50,8 +50,8 @@ namespace ND.Component.Caching
         /// <summary>
         /// 创建时间
         /// </summary>
-       
-        public DateTime CreateTime { get { return DateTime.Now; } }
+
+        public DateTime CreateTime { get; set; }
 
         /// <summary>
         /// 是否有效 0-无效 1-有效

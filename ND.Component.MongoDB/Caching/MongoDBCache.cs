@@ -122,8 +122,8 @@ namespace ND.Component.MongoDB.Caching
         {
             try
             {
-
-                MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(key);
+                Server server = ChooseServer(key);
+                MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(server.ConnStr);
 
                 var query2 = Query.And(
                                     Query.EQ("CacheKey", key)
@@ -188,6 +188,183 @@ namespace ND.Component.MongoDB.Caching
                 OnOperating("GetMongoDBEntity异常,excption:" + JsonConvert.SerializeObject(ex));
                 return null;
             }
+        } 
+        #endregion
+
+        #region GetList
+        public override List<CacheKeyMapDescriptor> GetList(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
+        {
+            List<CacheKeyMapDescriptor> lstCacheEntity = new List<CacheKeyMapDescriptor>();
+            foreach (var item in serverConfig)
+            {
+                MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(item.ConnStr);
+                List<MongoDBCacheEntity> lstEntity = collection.FindAll().ToList();
+                if (dateType == DateType.CreateTime)
+                {
+                    switch (cacheExpire)
+                    {
+                        case CacheExpire.Expired://已过期 包括过期和无效
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Invalid && x.ExpireDate < DateTime.Now && x.Created >= startDate && x.Created < endDate).ToList();
+                            break;
+                        case CacheExpire.NoExpired://未过期
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= DateTime.Now && x.Created >= startDate && x.Created < endDate).ToList();
+                            break;
+                        default:
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.Created >= startDate && x.Created < endDate).ToList();
+                            break;
+                    }
+
+
+                }
+                else if (dateType == DateType.ExpireTime)
+                {
+
+                    switch (cacheExpire)
+                    {
+                        case CacheExpire.Expired://已过期 包括过期和无效
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Invalid && x.ExpireDate < DateTime.Now && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                            break;
+                        case CacheExpire.NoExpired://未过期
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= DateTime.Now && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                            break;
+                        default:
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                            break;
+                    }
+                }
+                lstCacheEntity.AddRange(ChangeToCacheKeyMapDescriptor(lstEntity));
+
+            }
+            return lstCacheEntity;
+        } 
+        #endregion
+
+        #region ChangeToCacheKeyMapDescriptor
+        private List<CacheKeyMapDescriptor> ChangeToCacheKeyMapDescriptor(List<MongoDBCacheEntity> lstEntity)
+        {
+            List<CacheKeyMapDescriptor> lstCacheEntity = new List<CacheKeyMapDescriptor>();
+            lstEntity.ForEach(x =>
+            {
+                lstCacheEntity.Add(new CacheKeyMapDescriptor()
+                {
+                    CacheKey = x.CacheKey,
+                    CacheServerName = x.ApplicationName,
+                    CacheSta = x.CacheSta,
+                    CreateTime = x.Created,
+                    ExpireDate = x.ExpireDate
+                });
+            });
+            return lstCacheEntity;
+        } 
+        #endregion
+
+        #region BulkDeleteValue
+        public override bool BulkDeleteValue(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
+        {
+            List<string> lstCacheEntity = new List<string>();
+            foreach (var item in serverConfig)
+            {
+                MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(item.ConnStr);
+                List<MongoDBCacheEntity> lstEntity = collection.FindAll().ToList();
+                if (dateType == DateType.CreateTime)
+                {
+                    switch (cacheExpire)
+                    {
+                        case CacheExpire.Expired://已过期 包括过期和无效
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Invalid && x.ExpireDate < DateTime.Now && x.Created >= startDate && x.Created < endDate).ToList();
+                            break;
+                        case CacheExpire.NoExpired://未过期
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= DateTime.Now && x.Created >= startDate && x.Created < endDate).ToList();
+                            break;
+                        default:
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.Created >= startDate && x.Created < endDate).ToList();
+                            break;
+                    }
+
+
+                }
+                else if (dateType == DateType.ExpireTime)
+                {
+
+                    switch (cacheExpire)
+                    {
+                        case CacheExpire.Expired://已过期 包括过期和无效
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Invalid && x.ExpireDate < DateTime.Now && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                            break;
+                        case CacheExpire.NoExpired://未过期
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= DateTime.Now && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                            break;
+                        default:
+                            lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                            break;
+                    }
+                }
+                lstEntity.ForEach(x =>
+                {
+                    lstCacheEntity.Add(x.CacheKey);
+                });
+                
+
+            }
+            bool flag = true;
+            lstCacheEntity.ForEach(x =>
+            {
+               if(!DeleteValue(x))
+               {
+                   flag = false;
+               }
+            });
+            return flag;
+        } 
+        #endregion
+
+        #region GetAllKeys
+        public override List<string> GetAllKeys(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
+        {
+            List<string> lstKeys = new List<string>();
+            foreach (var item in serverConfig)
+            {
+                 MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(item.ConnStr);
+                 List<MongoDBCacheEntity> lstEntity = collection.FindAll().ToList();
+                 if (dateType == DateType.CreateTime)
+                 {
+                     switch (cacheExpire)
+                     {
+                         case CacheExpire.Expired://已过期 包括过期和无效
+                             lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Invalid && x.ExpireDate < DateTime.Now && x.Created >= startDate && x.Created < endDate).ToList();
+                             break;
+                         case CacheExpire.NoExpired://未过期
+                             lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= DateTime.Now && x.Created >= startDate && x.Created < endDate).ToList();
+                             break;
+                         default:
+                             lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.Created >= startDate && x.Created < endDate).ToList();
+                             break;
+                     }
+
+
+                 }
+                 else if (dateType == DateType.ExpireTime)
+                 {
+
+                     switch (cacheExpire)
+                     {
+                         case CacheExpire.Expired://已过期 包括过期和无效
+                             lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Invalid && x.ExpireDate < DateTime.Now && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                             break;
+                         case CacheExpire.NoExpired://未过期
+                             lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= DateTime.Now && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                             break;
+                         default:
+                             lstEntity = lstEntity.Where(x => x.CacheSta == CacheStatus.Effective && x.ExpireDate >= startDate && x.ExpireDate < endDate).ToList();
+                             break;
+                     }
+                 }
+                 lstEntity.ForEach(x =>
+                 {
+                     lstKeys.Add(x.CacheKey);
+                 });
+            }
+            return lstKeys;
         } 
         #endregion
     }

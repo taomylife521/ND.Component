@@ -41,6 +41,7 @@ namespace ND.Component.Test
                 .UseLog4Net()
                 .UseNLog()
                 .UseMongoDBCache();
+
             Stopwatch wt = new Stopwatch();
             wt.Start();
             int sum = 0;
@@ -48,10 +49,12 @@ namespace ND.Component.Test
             int writeFailedCount = 0;
             int rSucCount = 0;
             int rFailedCount = 0;
-            for (int i = 0; i < 10; i++)//1千万
+            int dSucCount = 0;//删除成功数量
+            int dFailedCount = 0;//删除失败数量
+            for (int i = 0; i < 10000; i++)//1万
             {
 
-                bool r = CacheManger.Instance.SetValue(i.ToString(), "b" + i.ToString(), Cachelimit.ByExpireDate,DateTime.Now.AddMinutes(1));
+                bool r = CacheManger.Instance.SetValue(i.ToString(), "b" + i.ToString(), Cachelimit.ByExpireDate, DateTime.Now.AddMinutes(1));
                 if (r)
                 {
                     writeSucCount++;
@@ -62,7 +65,7 @@ namespace ND.Component.Test
                 }
                 string bb = "";
                 CacheManger.Instance.TryGetValue(i.ToString(), out bb);
-                if(string.IsNullOrEmpty(bb))
+                if (string.IsNullOrEmpty(bb))
                 {
                     rFailedCount++;
                 }
@@ -70,13 +73,29 @@ namespace ND.Component.Test
                 {
                     rSucCount++;
                 }
+                bool r2 = CacheManger.Instance.DeleteValue(i.ToString());
+                if(r2)
+                {
+                    dSucCount++;
+                }else
+                {
+                    dFailedCount++;
+                }
+                Console.WriteLine("set:{key:"+i.ToString()+",value:"+"b"+i.ToString()+"},get:{key:"+i.ToString()+",value:"+bb+"}"+"delete:"+r2);
                 sum++;
-                Console.WriteLine("key:"+i.ToString()+",value:"+bb);
+               // Console.WriteLine("key:" + i.ToString() + ",value:" + bb);
             }
             wt.Stop();
-            Console.WriteLine("耗时:"+wt.ElapsedMilliseconds/1000);
-            Console.WriteLine("写入成功率:"+writeSucCount/sum+",写入失败率："+writeFailedCount/sum);
+            Console.WriteLine("耗时:" + wt.ElapsedMilliseconds / 1000);
+            Console.WriteLine("写入成功率:" + writeSucCount / sum + ",写入失败率：" + writeFailedCount / sum);
             Console.WriteLine("读取成功率:" + rSucCount / sum + ",读取失败率：" + rFailedCount / sum);
+            Console.WriteLine("删除成功率:" + dSucCount / sum + ",删除失败率：" + dFailedCount / sum);
+
+            Console.WriteLine("All Keys:");
+            CacheManger.Instance.GetAllKeys(CacheExpire.All).ForEach(x =>
+            {
+                Console.WriteLine(x);
+            });
             #endregion
 
            

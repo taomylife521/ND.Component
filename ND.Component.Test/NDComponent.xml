@@ -12,7 +12,7 @@
 
     <provider name="mongodb" isenabled="true">
       <provideritem  connstr="mongodb://192.168.1.104:27017" weightvalue="1" isenabled="true"/>
-      <!--<provideritem  connstr="mongodb://localhost:27017" weightvalue="1" isenabled="true"/>-->
+      <provideritem  connstr="mongodb://localhost:27017" weightvalue="1" isenabled="true"/>
       <!--<provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>-->
     </provider>
 

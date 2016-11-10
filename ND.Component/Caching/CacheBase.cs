@@ -25,7 +25,7 @@ namespace ND.Component.Caching
     {
         #region Event
         public static event EventHandler<string> onOperating;
-        private List<Server> serverConfig = new List<Server>();
+        public List<Server> serverConfig = new List<Server>();
         public string CacheDBName = "CacheDB";
         public string CacheTableName = "CacheTable";
         public CacheBase()
@@ -124,6 +124,8 @@ namespace ND.Component.Caching
       
         public abstract bool DeleteValue(string key);
 
+        public abstract List<string> GetAllKeys(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate);
+
 
 
 
@@ -134,19 +136,15 @@ namespace ND.Component.Caching
             return GetList(cacheExpire, DateType.CreateTime, Convert.ToDateTime("1900-01-01"), DateTime.Now);
         }
 
-        public List<CacheKeyMapDescriptor> GetList(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract List<CacheKeyMapDescriptor> GetList(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate);
+       
 
         public bool BulkDeleteValue(CacheExpire cacheExpire)
         {
             return BulkDeleteValue(cacheExpire, DateType.CreateTime, Convert.ToDateTime("1900-01-01"), DateTime.Now);
         }
 
-        public bool BulkDeleteValue(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract bool BulkDeleteValue(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate);
+       
     }
 }

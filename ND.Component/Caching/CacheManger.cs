@@ -67,5 +67,13 @@ namespace ND.Component.Caching
         {
             return _cache.SetValue<T>(key, value, cacheLimit, expireDate);
         }
+
+        public List<string> GetAllKeys(CacheExpire cacheExpire = CacheExpire.All, DateType dType = DateType.CreateTime, DateTime? startDate = null, DateTime? endDate = null)
+        {
+           
+               DateTime sDate =startDate == null ? DateTime.MinValue:Convert.ToDateTime(startDate);
+               DateTime eDate = endDate == null ? DateTime.MaxValue : Convert.ToDateTime(endDate);
+               return _cache.GetAllKeys(cacheExpire, dType, sDate, eDate);
+        }
     }
 }

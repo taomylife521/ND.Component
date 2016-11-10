@@ -97,6 +97,8 @@ namespace ND.Component.Caching
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         bool TryGetValue<T>(string key, out T value);
 
+        List<string> GetAllKeys(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate);
+
 
 
         /// <summary>
