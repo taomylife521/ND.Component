@@ -1,5 +1,6 @@
 ﻿using ND.Component.Config;
 using ND.Component.LoadBalance;
+using ND.Component.Log;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,9 +62,20 @@ namespace ND.Component.Caching
         /// <param name="e"></param>
         public void OnOperating(string e)
         {
+            try
+            {
+                if (NDComponentConfig.Instance.CacheProvider.IsLogging)//如果要记录日志的话
+                {
+                    NDLoggerFactoryManger.Instance.Info(e);
+
+                }
+            }
+            catch (Exception ex)
+            { }
             if (onOperating != null)
             {
                 onOperating(this, e);
+               
             }
         }
 
