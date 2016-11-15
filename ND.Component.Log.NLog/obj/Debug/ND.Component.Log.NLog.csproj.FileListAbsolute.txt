@@ -24,10 +24,8 @@ D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.Log.NLog.pdb
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\NLog.dll
-D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\Newtonsoft.Json.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\ND.Component.pdb
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\NLog.xml
-D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\bin\Debug\Newtonsoft.Json.xml
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.csprojResolveAssemblyReference.cache
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component.Log.NLog\obj\Debug\ND.Component.Log.NLog.pdb

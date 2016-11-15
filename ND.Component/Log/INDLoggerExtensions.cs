@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,8 +63,8 @@ namespace ND.Component.Log
             {
                 throw new ArgumentNullException(logger.ToString());
             }
-            if (formatter == null)
-                throw new ArgumentNullException(logger.ToString());
+           // if (formatter == null)
+              //  throw new ArgumentNullException(logger.ToString());
             
                 logger.Log(NDLogLevel.Debug, message, exception, formatter, args);
             
@@ -108,8 +109,8 @@ namespace ND.Component.Log
             {
                 throw new ArgumentNullException(logger.ToString());
             }
-            if (formatter == null)
-                throw new ArgumentNullException(logger.ToString());
+           // if (formatter == null)
+              //  throw new ArgumentNullException(logger.ToString());
             
                 logger.Log(NDLogLevel.Trace, message, exception, formatter, args);
             
@@ -125,6 +126,7 @@ namespace ND.Component.Log
         /// <param name="eventId">The event id associated with the log.</param>
         /// <param name="message">Format string of the log message.</param>
         /// <param name="args">An object array that contains zero or more objects to format.</param>
+         
         public static void Info<T>(this INDLogger logger, T message, params object[] args) where T : class
         {
             Info(logger, message, null, null, args);
@@ -138,11 +140,12 @@ namespace ND.Component.Log
         /// <param name="exception">The exception to log.</param>
         /// <param name="message">Format string of the log message.</param>
         /// <param name="args">An object array that contains zero or more objects to format.</param>
+        
         public static void Info<T>(this INDLogger logger, T message, Exception exception, params object[] args) where T : class
         {
             Info(logger, message, exception, null, args);
         }
-
+         
         public static void Info(this INDLogger logger, Exception exception, IFormatProvider formatter)
         {
             Info(logger, "", exception, formatter, null);
@@ -154,8 +157,7 @@ namespace ND.Component.Log
             {
                 throw new ArgumentNullException(logger.ToString());
             }
-            if (formatter == null)
-                throw new ArgumentNullException(logger.ToString());
+           
 
             logger.Log(NDLogLevel.Information, message, exception, formatter, args);
         }
@@ -199,8 +201,8 @@ namespace ND.Component.Log
             {
                 throw new ArgumentNullException(logger.ToString());
             }
-            if (formatter == null)
-                throw new ArgumentNullException(logger.ToString());
+           // if (formatter == null)
+               // throw new ArgumentNullException(logger.ToString());
 
             logger.Log(NDLogLevel.Warning, message, exception, formatter, args);
         }
@@ -244,8 +246,8 @@ namespace ND.Component.Log
             {
                 throw new ArgumentNullException(logger.ToString());
             }
-            if (formatter == null)
-                throw new ArgumentNullException(logger.ToString());
+           // if (formatter == null)
+                //throw new ArgumentNullException(logger.ToString());
 
             logger.Log(NDLogLevel.Error, message, exception, formatter, args);
         }
@@ -289,8 +291,8 @@ namespace ND.Component.Log
             {
                 throw new ArgumentNullException(logger.ToString());
             }
-            if (formatter == null)
-                throw new ArgumentNullException(logger.ToString());
+           // if (formatter == null)
+              //  throw new ArgumentNullException(logger.ToString());
 
             logger.Log(NDLogLevel.Critical, message, exception, formatter, args);
         }

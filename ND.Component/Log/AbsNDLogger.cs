@@ -26,18 +26,23 @@ namespace ND.Component.Log
     public abstract class AbsNDLogger : INDLogger
     {
 
-      
+       // public string Name { get; set; }
+        //public Type Type { get; set; }
         private NDLogLevel _minLogLevel=NDLogLevel.Trace;
         private NDLogLevel defaultLogLevel=NDLogLevel.Information;
       
       
          public NDLogLevel DefaultLogLevel { get{return defaultLogLevel;} set{defaultLogLevel=value;} }
          public NDLogLevel MinLogLevel { get { return _minLogLevel; } set { _minLogLevel = value; } }
-        public AbsNDLogger()
-        {
-           
+
+        
+       
+        //public AbsNDLogger(string name,Type type)
+        //{
+        //    Name = name;
+        //    Type = type;
             
-        }
+        //}
         
        #region Log
 		 /// <summary>
@@ -79,6 +84,10 @@ namespace ND.Component.Log
         } 
 	#endregion
 
+
+
+       
+        
     }
 
 

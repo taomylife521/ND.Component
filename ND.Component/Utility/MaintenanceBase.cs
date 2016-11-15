@@ -22,15 +22,11 @@ namespace ND.Component.Utility
 {
     public class MaintenanceBase : IDisposable
     {
- 
-        protected readonly NDLoggerFactoryManger logger;
-       public MaintenanceBase(INDLoggerFactory loggerFactory)
+      
+      //  protected readonly INDLogger logger;
+       public MaintenanceBase()
        {
-           if (loggerFactory != null)
-           {
-               NDLoggerFactoryManger.AddFactory(loggerFactory.GetType().FullName.ToString(), loggerFactory);
-               logger = NDLoggerFactoryManger.Instance;
-           }
+          
        }
 
        public virtual void Dispose()

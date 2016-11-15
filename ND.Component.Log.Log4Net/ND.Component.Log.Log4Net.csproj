@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComponentBuilderExtension.cs" />
     <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Log4NetLoggerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

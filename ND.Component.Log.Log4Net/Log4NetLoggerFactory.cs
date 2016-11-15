@@ -19,18 +19,17 @@ using System.Threading.Tasks;
 //**********************************************************************
 namespace ND.Component.Log.Log4Net
 {
-    public class Log4NetLoggerFactory : INDLoggerFactory
+    public class Log4NetLoggerFactory : AbsNDLoggerFactory
     {
-        private Log4NetLogger logger = null;
-        public INDLogger CreateLogger()
-        {
-            logger = new Log4NetLogger();
-            return logger;
-        }
+        
 
-        public INDLogger GetLogger()
+        protected override INDLogger CreateLogger(string name)
         {
-            return logger;
+            return new Log4NetLogger(name);
+        }
+        protected override INDLogger CreateLogger(Type type)
+        {
+            return new Log4NetLogger(type);
         }
     }
 }

@@ -66,7 +66,7 @@ namespace ND.Component.Caching
             {
                 if (NDComponentConfig.Instance.CacheProvider.IsLogging)//如果要记录日志的话
                 {
-                    NDLoggerFactoryManger.Instance.Info(e);
+                   // NDLoggerFactoryManger.Instance.Info(e);
 
                 }
             }

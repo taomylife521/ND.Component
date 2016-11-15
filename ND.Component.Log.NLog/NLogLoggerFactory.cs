@@ -18,20 +18,18 @@ using System.Threading.Tasks;
 //             修改日期:2016/10/19 11:02:57          
 //             修改理由：         
 //**********************************************************************
-namespace ND.Component.Log.NLogComponent
+namespace ND.Component.Log.NLog
 {
-    public class NLogLoggerFactory : INDLoggerFactory
+    public class NLogLoggerFactory : AbsNDLoggerFactory
     {
-        private NLogLogger logger = null;
-        public INDLogger CreateLogger()
+        protected override INDLogger CreateLogger(string name)
         {
-            logger = new NLogLogger();
-            return logger;
+           return new NLogLogger(name);
         }
 
-        public INDLogger GetLogger()
+        protected override INDLogger CreateLogger(Type type)
         {
-            return logger;
+            return new NLogLogger(type);
         }
     }
 }

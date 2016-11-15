@@ -29,6 +29,7 @@ namespace ND.Component.Config
         {
             XElement root = XElement.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NDComponent.xml"));
             NDComponentConfig.Instance.CacheProvider = BuildCacheProvider(root);
+            NDComponentConfig.Instance.LogProvider = BuildLogConfigProvider(root);
         }
         #region BuildCacheProvider
         private CacheConfigProvider BuildCacheProvider(XElement root)
@@ -38,10 +39,12 @@ namespace ND.Component.Config
             if (rootCache != null)
             {
                 cacheProvider = new CacheConfigProvider();
-                cacheProvider.CacheDBName = rootCache.Attribute("dbname").Value;
-                cacheProvider.CacheTableName = rootCache.Attribute("tablename").Value;
+               
                 foreach (var elm in rootCache.Elements("provider"))
                 {
+                    cacheProvider.CacheDBName = elm.Attribute("dbname").Value;
+                    cacheProvider.CacheTableName = elm.Attribute("tablename").Value;
+                    cacheProvider.IsLogging = string.IsNullOrEmpty(elm.Attribute("islogging").NotNull("").Value) ? false : Convert.ToBoolean(elm.Attribute("islogging").NotNull("").Value);
                     cacheProvider.Name = elm.Attribute("name").Value.NotEmpty("");
                     cacheProvider.IsEnabled = Convert.ToBoolean(elm.Attribute("isenabled").Value.NotEmpty("false"));
                     foreach (var elmItem in elm.Elements("provideritem"))
@@ -58,5 +61,34 @@ namespace ND.Component.Config
             return cacheProvider;
         } 
         #endregion
+
+        #region BuildLogConfigProvider
+        public LogConfigProvider BuildLogConfigProvider(XElement root)
+        {
+            LogConfigProvider logProvider = null;
+            XElement rootLog = root.Element("logprovider");
+            if (rootLog != null)
+            {
+                rootLog = rootLog.Element("logfactory");
+                logProvider = new LogConfigProvider();
+                logProvider.Type = rootLog.Attribute("type").Value;
+                logProvider.IsEnabled = Convert.ToBoolean(rootLog.Attribute("isenabled").Value.NotEmpty("false"));
+            }
+            return logProvider;
+        }
+        #endregion
+
+
+        public void RefreshLogConfigProvider()
+        {
+            XElement root = XElement.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NDComponent.xml"));
+            NDComponentConfig.Instance.LogProvider = BuildLogConfigProvider(root);
+        }
+
+        public void RefreshCacheConfigProvider()
+        {
+            XElement root = XElement.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NDComponent.xml"));
+            NDComponentConfig.Instance.CacheProvider = BuildCacheProvider(root);
+        }
     }
 }

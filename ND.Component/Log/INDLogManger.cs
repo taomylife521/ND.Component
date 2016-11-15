@@ -3,17 +3,17 @@
 // 文件名称(File Name)：        
 // 功能描述(Description)：     
 // 作者(Author)：               
-// 日期(Create Date)： 2016/10/18 10:37:01         
+// 日期(Create Date)： 2016/11/15 10:27:40         
 //
 // 修改记录(Revision History)： 
 //       R1:
 //             修改作者:          
-//             修改日期: 2016/10/18 10:37:01           
+//             修改日期: 2016/11/15 10:27:40           
 //             修改理由：         
 //
 //       R2:
 //             修改作者:          
-//             修改日期:  2016/10/18 10:37:01         
+//             修改日期:  2016/11/15 10:27:40         
 //             修改理由：         
 //
 //**********************************************************************
@@ -25,16 +25,19 @@ using System.Threading.Tasks;
 
 namespace ND.Component.Log
 {
-    /// <summary>
-    /// 日志记录接口
-    /// </summary>
-    public interface INDLogger
+    public interface INDLogManger
     {
-        void Log<T>(NDLogLevel logLevel,T message, Exception exception,IFormatProvider provider,params object[] args) where T:class;
-        bool IsEnabled(NDLogLevel logLevel);
 
-        
-       
+        INDLoggerFactory LogFactory { get; set; }
+
+        void Reset();
+
+        INDLogger GetCurrentClassLogger();
+
+        INDLogger GetLogger<T>();
+
+        INDLogger GetLogger(Type type);
+
+        INDLogger GetLogger(string key);
     }
-    public interface ILogger<T> : INDLogger { }
 }

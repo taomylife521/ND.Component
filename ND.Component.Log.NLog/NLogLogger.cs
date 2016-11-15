@@ -19,50 +19,65 @@ using System.Threading.Tasks;
 //             修改日期:2016/10/18 13:59:01          
 //             修改理由：         
 //**********************************************************************
-namespace ND.Component.Log.NLogComponent
+namespace ND.Component.Log.NLog
 {
    public class NLogLogger:AbsNDLogger
     {
+       private  Logger _logger =null;
 
-        private readonly Logger _logger = LogManager.GetLogger(LogCategory.NLog.ToString()); //LogManager.GetLogger(LogCategory.NLog.ToString());
-        public override void Log<T>(NDLogLevel logLevel, T state, Exception exception,  IFormatProvider provider, params object[] args)
-        {
-            provider = null;
-            var nLogLogLevel = ConvertLogLevel(logLevel);
-            if (!IsEnabled(nLogLogLevel))
-                return;
+       
+       public NLogLogger(string name)
+       {
+           _logger = LogManager.GetLogger(name);
+       }
 
-          
-            switch(logLevel)
-            {
-                case NDLogLevel.Critical:
-                    
-                    _logger.Fatal(exception, provider, state.ToString(), args);
-                    break;
-                case NDLogLevel.Debug:
-                    _logger.Debug(exception, provider, state.ToString(), args);
-                    break;
-                case NDLogLevel.Error:
-                    _logger.Error(exception, provider, state.ToString(), args);
-                    break;
-                case NDLogLevel.Information:
-                    _logger.Info(exception, provider, state.ToString(), args);
-                    break;
-                case NDLogLevel.None:
-                    _logger.Info(exception, provider, state.ToString(), args);
-                    break;
-                case NDLogLevel.Trace:
-                    _logger.Trace(exception, provider, state.ToString(), args);
-                    break;
-                case NDLogLevel.Warning:
-                    _logger.Warn(exception, provider, state.ToString(), args);
-                    break;
-                default:
-                    break;
-
-            }
+       public NLogLogger(Type type)
+       {
+           _logger = LogManager.GetCurrentClassLogger(type);
+           //_logger = LogManager.GetLogger(type.FullName,type);
+       }
+       //LogManager.GetLogger(LogCategory.NLog.ToString());
+       #region Log
+       public override void Log<T>(NDLogLevel logLevel, T state, Exception exception, IFormatProvider provider, params object[] args)
+       {
            
-        }
+           provider = null;
+           var nLogLogLevel = ConvertLogLevel(logLevel);
+           if (!IsEnabled(nLogLogLevel))
+               return;
+
+
+           switch (logLevel)
+           {
+               case NDLogLevel.Critical:
+
+                   _logger.Fatal(exception, provider, state.ToString(), args);
+                   break;
+               case NDLogLevel.Debug:
+                   _logger.Debug(exception, provider, state.ToString(), args);
+                   break;
+               case NDLogLevel.Error:
+                   _logger.Error(exception, provider, state.ToString(), args);
+                   break;
+               case NDLogLevel.Information:
+                   _logger.Info(exception, provider, state.ToString(), args);
+                   break;
+               case NDLogLevel.None:
+                   _logger.Info(exception, provider, state.ToString(), args);
+                   break;
+               case NDLogLevel.Trace:
+                   _logger.Trace(exception, provider, state.ToString(), args);
+                   break;
+               case NDLogLevel.Warning:
+                   _logger.Warn(exception, provider, state.ToString(), args);
+                   break;
+               default:
+                   break;
+
+           }
+
+       } 
+       #endregion
 
         public override bool IsEnabled(NDLogLevel logLevel)
         {
@@ -98,7 +113,9 @@ namespace ND.Component.Log.NLogComponent
             }
         }
 
-       
-       
+
+
+
+        
     }
 }

@@ -68,17 +68,16 @@
     <Compile Include="LoadBalance\LoadBalanceFactory.cs" />
     <Compile Include="LoadBalance\Server.cs" />
     <Compile Include="LoadBalance\WeightedRoundBalance.cs" />
+    <Compile Include="Log\AbsNDLoggerFactory.cs" />
     <Compile Include="Log\INDLogger.cs" />
     <Compile Include="Log\INDLoggerFactory.cs" />
     <Compile Include="Log\AbsNDLogger.cs" />
     <Compile Include="Log\INDLoggerExtensions.cs" />
-    <Compile Include="Log\LogCategory.cs" />
-    <Compile Include="Log\NDFormatProvider.cs" />
-    <Compile Include="Log\NDLogEventArgs.cs" />
-    <Compile Include="Log\NDLoggerCollection.cs" />
-    <Compile Include="Log\NDLoggerFactoryManger.cs" />
-    <Compile Include="Log\NDLoggerFactoryMangerExtention.cs" />
+    <Compile Include="Log\INDLogManger.cs" />
     <Compile Include="Log\NDLogLevel.cs" />
+    <Compile Include="Log\NDLogManger.cs" />
+    <Compile Include="Log\NullNDLogger.cs" />
+    <Compile Include="Log\NullNDLoggerFactory.cs" />
     <Compile Include="MessageBus\IMessageBus.cs" />
     <Compile Include="MessageBus\IMessagePublisher.cs" />
     <Compile Include="MessageBus\IMessageSubscriber.cs" />
@@ -96,7 +95,9 @@
     <None Include="App.config" />
     <None Include="Log\packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="PluginProvider\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="dll\Newtonsoft.Json.dll" />
     <Content Include="NDComponent.xml" />

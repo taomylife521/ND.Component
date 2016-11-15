@@ -50,8 +50,7 @@ namespace ND.Component.RabbitMQ.MessageBus
         private readonly IModel _subscriberChannel;
         private readonly TimeSpan _defaultMessageTimeToLive = TimeSpan.MaxValue;
 
-        public RabbitMQMessageBus(string hostNmae, string userName, string password, string queueName, string routingKey, string exhangeName, bool durable, bool persistent, bool exclusive, bool autoDelete, INDLoggerFactory logFactory, IDictionary<string, object> queueArguments = null, TimeSpan? defaultMessageTimeToLive = null, bool noAck = false)
-            : base(logFactory)  
+        public RabbitMQMessageBus(string hostNmae, string userName, string password, string queueName, string routingKey, string exhangeName, bool durable, bool persistent, bool exclusive, bool autoDelete,  IDictionary<string, object> queueArguments = null, TimeSpan? defaultMessageTimeToLive = null, bool noAck = false)
         {
 
             _hostName = hostNmae;

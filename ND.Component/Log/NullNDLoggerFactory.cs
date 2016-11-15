@@ -6,24 +6,31 @@ using System.Threading.Tasks;
 
 //**********************************************************************
 //
-// 文件名称(File Name)：NDFormatProvider.CS        
+// 文件名称(File Name)：NullNDLoggerFactory.CS        
 // 功能描述(Description)：     
 // 作者(Author)：Aministrator               
-// 日期(Create Date)： 2016/10/20 10:56:38         
+// 日期(Create Date)： 2016/11/15 11:03:50         
 //
 // 修改记录(Revision History)： 
 //       R1:
 //             修改作者:          
-//             修改日期:2016/10/20 10:56:38          
+//             修改日期:2016/11/15 11:03:50          
 //             修改理由：         
 //**********************************************************************
 namespace ND.Component.Log
 {
-    public class NDFormatProvider : IFormatProvider
+    public class NullNDLoggerFactory:INDLoggerFactory
     {
-        public object GetFormat(Type formatType)
+        private static readonly INDLogger _logger =new NullNDLogger();
+       
+        public INDLogger GetLogger(Type type)
         {
-            return formatType;
+            return _logger;
+        }
+
+        public INDLogger GetLogger(string name)
+        {
+            return _logger;
         }
     }
 }

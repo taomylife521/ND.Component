@@ -30,8 +30,8 @@ namespace ND.Component.Log
     /// </summary>
     public interface INDLoggerFactory
     {
-        INDLogger CreateLogger();
-        INDLogger GetLogger();
+        INDLogger GetLogger(Type type);
+        INDLogger GetLogger(string name);
         
     }
 }

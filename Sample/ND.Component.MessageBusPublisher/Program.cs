@@ -1,4 +1,4 @@
-﻿using ND.Component.Log.NLogComponent;
+﻿
 using ND.Component.MessageBus;
 using ND.Component.RabbitMQ.MessageBus;
 using ND.Component.Redis.MessageBus;
@@ -34,7 +34,7 @@ namespace ND.Component.MessageBusPublisher
 
             #region RabbitMQ
             IMessageBus messageBus = new RabbitMQMessageBus(hostNmae: "localhost", userName: "guest", password: "guest", queueName: "NDQueue", routingKey: "NDQueueRoutingKey",
-                 exhangeName: "NDExchange", durable: false, persistent: false, exclusive: false, autoDelete: false, logFactory:new NLogLoggerFactory(),queueArguments: null);
+                 exhangeName: "NDExchange", durable: false, persistent: false, exclusive: false, autoDelete: false, queueArguments: null);
             string input;
             Console.WriteLine("Publisher...");
             Console.WriteLine("Enter the messages to send (press CTRL+Z) to exit :");

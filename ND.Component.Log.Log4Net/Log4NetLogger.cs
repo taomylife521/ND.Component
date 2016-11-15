@@ -9,9 +9,20 @@ namespace ND.Component.Log.Log4Net
 {
     public class Log4NetLogger : AbsNDLogger
     {
-       
-        private static readonly log4net.ILog _logger = log4net.LogManager.GetLogger(LogCategory.Log4Net.ToString());
-          
+     
+        private   log4net.ILog _logger = null; 
+
+        public Log4NetLogger(string name)
+        {
+            _logger = log4net.LogManager.GetLogger(name);
+        }
+
+        public Log4NetLogger(Type type)
+        {
+            _logger = log4net.LogManager.GetLogger(type);
+        }
+      
+      
         //private readonly Logger _logger = LogManager.GetLogger(LogCategory.NLog.ToString()); //LogManager.GetLogger(LogCategory.NLog.ToString());
         public override void Log<T>(NDLogLevel logLevel, T message, Exception exception, IFormatProvider provider, params object[] args)
         {
@@ -83,5 +94,7 @@ namespace ND.Component.Log.Log4Net
                     return global::log4net.Core.Level.Debug;
             }
         }
+
+       
     }
 }

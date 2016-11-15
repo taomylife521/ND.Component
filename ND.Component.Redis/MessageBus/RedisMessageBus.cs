@@ -33,7 +33,7 @@ namespace ND.Component.Redis.MessageBus
         //private readonly ISerializer _serializer;
         private static readonly object _lockObject = new object();
         private bool _isSubscribed;
-        public RedisMessageBus(INDLoggerFactory logFactory,ISubscriber subscriber, string topic = null):base(logFactory)
+        public RedisMessageBus(ISubscriber subscriber, string topic = null)
           
         {
             _subscriber = subscriber;

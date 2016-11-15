@@ -24,6 +24,7 @@ namespace ND.Component.Config
     /// </summary>
     public class CacheConfigProvider : ConfigProviderBase
     {
+        private bool isLogging = false;
         public CacheConfigProvider()
         {
             CacheItem = new List<CacheProviderItem>();
@@ -37,6 +38,11 @@ namespace ND.Component.Config
         /// 缓存数据表名称
         /// </summary>
         public string CacheTableName { get; set; }
+
+        /// <summary>
+        /// 是否记录日志
+        /// </summary>
+        public bool IsLogging { get { return isLogging; } set { isLogging = value; } }
 
         /// <summary>
         /// 缓存服务器列表

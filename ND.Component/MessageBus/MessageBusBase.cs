@@ -25,8 +25,9 @@ namespace ND.Component.MessageBus
 {
     public abstract class MessageBusBase :MaintenanceBase, IMessageBus 
     {
+        public INDLogger logger = NDLogManger.LogFactory.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected readonly ConcurrentDictionary<string, Subscriber> _subscribers = new ConcurrentDictionary<string, Subscriber>();
-        public MessageBusBase(INDLoggerFactory logFactory):base(logFactory) 
+        public MessageBusBase()
         { 
         
         }

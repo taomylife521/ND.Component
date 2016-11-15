@@ -83,7 +83,7 @@ namespace ND.Component.Log
         } 
 	    #endregion
 
-       #region 添加日志提供者
+       #region 移除日志提供者
         public static bool RemoveFactory(string logCategory)
        {
             if(!factorys.ContainsKey(logCategory.ToString()))
@@ -109,6 +109,26 @@ namespace ND.Component.Log
             return loggerCollection.ToList();
         } 
         #endregion
+
+       #region 获取所有的logger
+       public static NDLoggerFactoryManger GetLogger(string name)
+       {
+           return GetLogger(name, null);
+       }
+       public static NDLoggerFactoryManger GetLogger(Type type)
+       {
+           return GetLogger("", type);
+       }
+       public static NDLoggerFactoryManger GetLogger(string name, Type type)
+       {
+          List<INDLogger> loggers= GetLoggers();
+          loggers.ForEach(x =>
+          {
+              x.GetLogger(name, type);
+          });
+           return Instance;
+       }
+       #endregion
 
 
        #region  Log

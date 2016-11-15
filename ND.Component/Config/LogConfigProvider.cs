@@ -21,5 +21,8 @@ namespace ND.Component.Config
 {
     public class LogConfigProvider
     {
+        public string Type { get; set; }
+
+        public bool IsEnabled { get; set; }
     }
 }
