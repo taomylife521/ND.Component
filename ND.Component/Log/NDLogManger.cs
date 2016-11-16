@@ -26,33 +26,21 @@ namespace ND.Component.Log
    public class NDLogManger:INDLogManger
     {
        private INDLoggerFactory _logFactory = NDComponentConfig.Instance.LogProvider.LogFactory;
-      
-        private static Func<MethodBase> _getCallingMethod;
-        #region property
-        public  INDLoggerFactory LogFactory
-        {
-            get
-            {
-                return _logFactory;
-            }
-            
-        }
-        INDLoggerFactory INDLogManger.LogFactory
-        {
-            get
-            {
-                return LogFactory;
-            }
-            
-        }
-        #endregion
+       private static NDLogManger instance = null;
+       private NDLogManger() { }
+
+       // private static Func<MethodBase> _getCallingMethod;
+       public static NDLogManger Instance { get { return instance; } set { instance = value; } }
 
        
       
         #region NDLogManger
         static NDLogManger()
         {
-           
+           if(instance == null)
+           {
+               instance = new NDLogManger();
+           }
         }
        
        
@@ -125,22 +113,25 @@ namespace ND.Component.Log
 
         public INDLogger GetLogger<T>()
         {
-            return LogFactory.GetLogger(typeof(T));
+            return _logFactory.GetLogger(typeof(T));
         }
 
         public INDLogger GetLogger(Type type)
         {
-            return LogFactory.GetLogger(type.FullName);
+            return _logFactory.GetLogger(type.FullName);
         }
 
         public INDLogger GetLogger(string key)
         {
-            return LogFactory.GetLogger(key);
+            return _logFactory.GetLogger(key);
         }
 
 
-       
 
-        
+
+
+
+
+       
     }
 }

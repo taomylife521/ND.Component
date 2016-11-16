@@ -28,11 +28,11 @@ namespace ND.Component.Log
     public interface INDLogManger
     {
 
-        INDLoggerFactory LogFactory { get;  }
+       // INDLoggerFactory LogFactory { get;  }
 
      
 
-        INDLogger GetCurrentClassLogger();
+       // INDLogger GetCurrentClassLogger();
 
         INDLogger GetLogger<T>();
 

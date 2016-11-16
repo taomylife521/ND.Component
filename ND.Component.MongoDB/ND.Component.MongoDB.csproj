@@ -43,6 +43,7 @@
       <HintPath>..\ND.Component\dll\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,7 +54,6 @@
   <ItemGroup>
     <Compile Include="Caching\MongoDBCache.cs" />
     <Compile Include="Caching\MongoDBCacheEntity.cs" />
-    <Compile Include="ComponentBuilderExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

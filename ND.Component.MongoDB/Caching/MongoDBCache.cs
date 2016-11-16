@@ -3,6 +3,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using ND.Component.Caching;
+using ND.Component.Config;
 using ND.Component.LoadBalance;
 using Newtonsoft.Json;
 using System;
@@ -28,6 +29,7 @@ namespace ND.Component.MongoDB.Caching
 {
    public class MongoDBCache:CacheBase
     {
+      
 
         #region Set Value
         public override bool SetValue<T>(string key, T value, Cachelimit cacheLimit, DateTime? expireDate)
@@ -155,9 +157,9 @@ namespace ND.Component.MongoDB.Caching
 
             MongoClient client = new MongoClient(connStr);
             MongoServer srv = client.GetServer();
-            MongoDatabase db = srv.GetDatabase(CacheDBName);
+            MongoDatabase db = srv.GetDatabase(NDComponentConfig.Instance.CacheProvider.CacheDBName);
             //string tableName = cacheLimit == Cachelimit.Forever ? CacheTableName + "Forever" : CacheTableName + "ByExpireDate";
-            string tableName = CacheTableName;
+            string tableName = NDComponentConfig.Instance.CacheProvider.CacheTableName;
             if (!db.CollectionExists(tableName))
                 db.CreateCollection(tableName);
 
@@ -195,7 +197,7 @@ namespace ND.Component.MongoDB.Caching
         public override List<CacheKeyMapDescriptor> GetList(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
         {
             List<CacheKeyMapDescriptor> lstCacheEntity = new List<CacheKeyMapDescriptor>();
-            foreach (var item in serverConfig)
+            foreach (var item in ChangeServerList())
             {
                 MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(item.ConnStr);
                 List<MongoDBCacheEntity> lstEntity = collection.FindAll().ToList();
@@ -262,7 +264,7 @@ namespace ND.Component.MongoDB.Caching
         public override bool BulkDeleteValue(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
         {
             List<string> lstCacheEntity = new List<string>();
-            foreach (var item in serverConfig)
+            foreach (var item in ChangeServerList())
             {
                 MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(item.ConnStr);
                 List<MongoDBCacheEntity> lstEntity = collection.FindAll().ToList();
@@ -322,7 +324,7 @@ namespace ND.Component.MongoDB.Caching
         public override List<string> GetAllKeys(CacheExpire cacheExpire, DateType dateType, DateTime startDate, DateTime endDate)
         {
             List<string> lstKeys = new List<string>();
-            foreach (var item in serverConfig)
+            foreach (var item in ChangeServerList())
             {
                  MongoCollection<MongoDBCacheEntity> collection = GetMongoDBCollection(item.ConnStr);
                  List<MongoDBCacheEntity> lstEntity = collection.FindAll().ToList();

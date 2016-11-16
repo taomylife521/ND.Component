@@ -26,17 +26,17 @@ namespace ND.Component.Caching
     {
         #region Event
         public static event EventHandler<string> onOperating;
-        public List<Server> serverConfig = new List<Server>();
-        public string CacheDBName = "CacheDB";
-        public string CacheTableName = "CacheTable";
+      
+       
         public CacheBase()
         {
-            if(NDComponentConfig.Instance.CacheProvider ==null || NDComponentConfig.Instance.CacheProvider.IsEnabled!=true || NDComponentConfig.Instance.CacheProvider.CacheItem == null || NDComponentConfig.Instance.CacheProvider.CacheItem.Where(x=>x.IsEnabled==true).ToList().Count <= 0)
-            {
-                throw new Exception("Invalid_CacheProvider_Config");
-            }
-            CacheDBName = NDComponentConfig.Instance.CacheProvider.CacheDBName;
-            CacheTableName = NDComponentConfig.Instance.CacheProvider.CacheTableName;
+           
+        }
+       
+
+        public List<Server> ChangeServerList()
+        {
+               List<Server> serverConfig = new List<Server>();
             NDComponentConfig.Instance.CacheProvider.CacheItem.ForEach(x =>
             {
                 if (x.IsEnabled)//如果启用则添加到服务器列表中
@@ -44,16 +44,16 @@ namespace ND.Component.Caching
                     serverConfig.Add(new Server(x.ConnStr, x.WeightValue, x.ConnStr));
                 }
             });
+            return serverConfig;
         }
-
         public Server ChooseServer(string key)
         {
-            return LoadBalanceManger.Instance.ChooseServer(serverConfig, key);
+            return LoadBalanceManger.Instance.ChooseServer(ChangeServerList(), key);
         }
 
         public string ChooseServerConnStr(string key)
         {
-            return LoadBalanceManger.Instance.ChooseServer(serverConfig, key).ConnStr;
+            return LoadBalanceManger.Instance.ChooseServer(ChangeServerList(), key).ConnStr;
         }
 
         /// <summary>

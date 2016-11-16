@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<NDComponent isthrowconfigexception="false">
+<NDComponent isthrowconfigexception="true">
 
   <!--Log日志组件Provider-->
   <!--当前节点只能有一个,type以逗号分隔[0]代表程序集名称 [1]代表类型名称-->
   <logprovider type="ND.Component.Log.NLog,ND.Component.Log.NLog.NLogLoggerFactory" isenabled="true"/>
 
   <!--负载均衡配置-->
-  <balanceprovider type="ND.Component.LoadBalance,ND.Component.LoadBalance.HashBalance" isenabled="true"/>
+  <balanceprovider type="ND.Component,ND.Component.LoadBalance.HashBalance" isenabled="true"/>
   
   <!--分布式缓存CacheProvider-->
-  <cacheprovider name="mongodb" type="ND.Component.MongoDB.Caching,ND.Component.MongoDB.Caching.MongoDBCache" isenabled="true" dbname="CacheDB" tablename="TestCache" islogging="true">
+  <cacheprovider name="mongodb" type="ND.Component.MongoDB,ND.Component.MongoDB.Caching.MongoDBCache" isenabled="true" dbname="CacheDB" tablename="TestCache" islogging="true">
 
     <!--分布式缓存,当前节点只能有一个-->
     <!--<provider name="redis" isenabled="false">

@@ -23,15 +23,15 @@ namespace ND.Component.Caching
     public class CacheManger
     {
         private static CacheManger _instance = null;
-        private  ICache _cache;
+        private ICache _cache = NDComponentConfig.Instance.CacheProvider.Cache;
         private static readonly object _loadLock = new object();
 
         #region property
         public  ICache cache
         {
             get
-            { 
-                return  NDComponentConfig.Instance.CacheProvider.Cache;
+            {
+                return _cache;
             }
            
         }

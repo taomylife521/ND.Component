@@ -62,9 +62,10 @@ namespace ND.Component.Config
                             WeightValue = Convert.ToInt32(elmItem.Attribute("weightvalue").Value.NotEmpty("1"))
                         });
                     }
+                    cacheProvider.Cache = BuildCache(cacheProvider);
                 
             }
-            cacheProvider.Cache = BuildCache();
+           
             return cacheProvider;
         } 
         #endregion
@@ -74,11 +75,11 @@ namespace ND.Component.Config
         /// 组件BuildCache
         /// </summary>
         /// <returns></returns>
-        private static ICache BuildCache()
+        private static ICache BuildCache(CacheConfigProvider provider)
         {
             try
             {
-                if (NDComponentConfig.Instance.CacheProvider == null || string.IsNullOrEmpty(NDComponentConfig.Instance.CacheProvider.Type) || NDComponentConfig.Instance.CacheProvider.IsEnabled == false)
+                if (provider == null || string.IsNullOrEmpty(provider.Type) || provider.IsEnabled == false)
                 {
                     if (NDComponentConfig.Instance.IsThrowConfigException)
                     {
@@ -87,9 +88,9 @@ namespace ND.Component.Config
                     return new NullCache();
                 }
 
-                string assemblyName = NDComponentConfig.Instance.CacheProvider.Type.Split(',')[0];
-                string typeName = NDComponentConfig.Instance.CacheProvider.Type.Split(',')[1];
-                Type type = Type.GetType(typeName + "," + assemblyName);
+                string assemblyName = provider.Type.Split(',')[0];
+                string typeName = provider.Type.Split(',')[1];
+                Type type = Type.GetType(typeName+","+assemblyName);
                 return (ICache)Activator.CreateInstance(type);
             }
             catch (Exception ex)
@@ -128,7 +129,22 @@ namespace ND.Component.Config
         /// <returns></returns>
         private static INDLoggerFactory BuildNDLoggerFactory(LogConfigProvider logProvider)
         {
-            if (logProvider == null || string.IsNullOrEmpty(logProvider.Type) || logProvider.IsEnabled == false)
+            try
+            {
+                if (logProvider == null || string.IsNullOrEmpty(logProvider.Type) || logProvider.IsEnabled == false)
+                {
+                    if (NDComponentConfig.Instance.IsThrowConfigException)
+                    {
+                        throw new ArgumentNullException("Invalid_Config_LogProvider");
+                    }
+                    return new NullNDLoggerFactory();
+                }
+                string assemblyName = logProvider.Type.Split(',')[0];
+                string typeName = logProvider.Type.Split(',')[1];
+                Type type = Type.GetType(typeName + "," + assemblyName);
+                return (INDLoggerFactory)Activator.CreateInstance(type);
+            }
+            catch(Exception ex)
             {
                 if (NDComponentConfig.Instance.IsThrowConfigException)
                 {
@@ -136,10 +152,6 @@ namespace ND.Component.Config
                 }
                 return new NullNDLoggerFactory();
             }
-            string assemblyName = NDComponentConfig.Instance.LogProvider.Type.Split(',')[0];
-            string typeName = NDComponentConfig.Instance.LogProvider.Type.Split(',')[1];
-            Type type = Type.GetType(assemblyName + "." + typeName + "," + assemblyName);
-            return (INDLoggerFactory)Activator.CreateInstance(type);
         }
         #endregion
 
@@ -169,18 +181,29 @@ namespace ND.Component.Config
         /// <returns></returns>
         private static IBalance BuildBalance(BalanceConfigProvider provider)
         {
-            if (provider == null || string.IsNullOrEmpty(provider.Type) || provider.IsEnabled == false)
+            try
             {
-                if(NDComponentConfig.Instance.IsThrowConfigException)
+                if (provider == null || string.IsNullOrEmpty(provider.Type) || provider.IsEnabled == false)
+                {
+                    if (NDComponentConfig.Instance.IsThrowConfigException)
+                    {
+                        throw new ArgumentNullException("Invalid_Config_BalanceProvider");
+                    }
+                    return new RandomBalance();
+                }
+                string assemblyName = provider.Type.Split(',')[0];
+                string typeName = provider.Type.Split(',')[1];
+                Type type = Type.GetType(typeName + "," + assemblyName);
+                return (IBalance)Activator.CreateInstance(type);
+            }
+            catch(Exception ex)
+            {
+                if (NDComponentConfig.Instance.IsThrowConfigException)
                 {
                     throw new ArgumentNullException("Invalid_Config_BalanceProvider");
                 }
                 return new RandomBalance();
             }
-            string assemblyName = NDComponentConfig.Instance.LogProvider.Type.Split(',')[0];
-            string typeName = NDComponentConfig.Instance.LogProvider.Type.Split(',')[1];
-            Type type = Type.GetType(assemblyName + "." + typeName + "," + assemblyName);
-            return (IBalance)Activator.CreateInstance(type);
         }
         #endregion
 

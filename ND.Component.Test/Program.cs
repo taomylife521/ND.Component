@@ -36,15 +36,14 @@ namespace ND.Component.Test
 
             #region MyRegion
             IComponentBuilder build = new DefaultComponentBuilder();
-            build.Build()
-                .UseMongoDBCache();
+            build.Build();
+               
             #region 日志测试
-            
-            //INDLogger logger = NDLogManger.LogFactory.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+            //INDLogger logger = NDLogManger.Instance.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             //try
             //{
-            //    int i = 0;
-            //    int j = 2 / i;
+              
             //    logger.Info("i am program", new Exception("错误了"));
             //    TestLog log = new TestLog();
             //    log.TestLog2();
@@ -57,61 +56,62 @@ namespace ND.Component.Test
             #endregion
 
             #region Cache 测试
-            //NDLoggerFactoryManger.Instance.Error("i am preogram2");
-            //Stopwatch wt = new Stopwatch();
-            //wt.Start();
-            //int sum = 0;
-            //int writeSucCount = 0;
-            //int writeFailedCount = 0;
-            //int rSucCount = 0;
-            //int rFailedCount = 0;
-            //int dSucCount = 0;//删除成功数量
-            //int dFailedCount = 0;//删除失败数量
-            //for (int i = 0; i < 10000; i++)//1万
-            //{
+           
+            Stopwatch wt = new Stopwatch();
+            wt.Start();
+            int sum = 0;
+            int writeSucCount = 0;
+            int writeFailedCount = 0;
+            int rSucCount = 0;
+            int rFailedCount = 0;
+            int dSucCount = 0;//删除成功数量
+            int dFailedCount = 0;//删除失败数量
+            for (int i = 0; i < 10000; i++)//1万
+            {
 
-            //    bool r = CacheManger.Instance.SetValue(i.ToString(), "b" + i.ToString(), Cachelimit.ByExpireDate, DateTime.Now.AddMinutes(1));
-            //    if (r)
-            //    {
-            //        writeSucCount++;
-            //    }
-            //    else
-            //    {
-            //        writeFailedCount++;
-            //    }
-            //    string bb = "";
-            //    CacheManger.Instance.TryGetValue(i.ToString(), out bb);
-            //    if (string.IsNullOrEmpty(bb))
-            //    {
-            //        rFailedCount++;
-            //    }
-            //    else
-            //    {
-            //        rSucCount++;
-            //    }
-            //    bool r2 = CacheManger.Instance.DeleteValue(i.ToString());
-            //    if(r2)
-            //    {
-            //        dSucCount++;
-            //    }else
-            //    {
-            //        dFailedCount++;
-            //    }
-            //    Console.WriteLine("set:{key:"+i.ToString()+",value:"+"b"+i.ToString()+"},get:{key:"+i.ToString()+",value:"+bb+"}"+"delete:"+r2);
-            //    sum++;
-            //   // Console.WriteLine("key:" + i.ToString() + ",value:" + bb);
-            //}
-            //wt.Stop();
-            //Console.WriteLine("耗时:" + wt.ElapsedMilliseconds / 1000);
-            //Console.WriteLine("写入成功率:" + writeSucCount / sum + ",写入失败率：" + writeFailedCount / sum);
-            //Console.WriteLine("读取成功率:" + rSucCount / sum + ",读取失败率：" + rFailedCount / sum);
-            //Console.WriteLine("删除成功率:" + dSucCount / sum + ",删除失败率：" + dFailedCount / sum);
+                bool r = CacheManger.Instance.SetValue(i.ToString(), "b" + i.ToString(), Cachelimit.ByExpireDate, DateTime.Now.AddMinutes(1));
+                if (r)
+                {
+                    writeSucCount++;
+                }
+                else
+                {
+                    writeFailedCount++;
+                }
+                string bb = "";
+                CacheManger.Instance.TryGetValue(i.ToString(), out bb);
+                if (string.IsNullOrEmpty(bb))
+                {
+                    rFailedCount++;
+                }
+                else
+                {
+                    rSucCount++;
+                }
+                bool r2 = CacheManger.Instance.DeleteValue(i.ToString());
+                if (r2)
+                {
+                    dSucCount++;
+                }
+                else
+                {
+                    dFailedCount++;
+                }
+                Console.WriteLine("set:{key:" + i.ToString() + ",value:" + "b" + i.ToString() + "},get:{key:" + i.ToString() + ",value:" + bb + "}" + "delete:" + r2);
+                sum++;
+                // Console.WriteLine("key:" + i.ToString() + ",value:" + bb);
+            }
+            wt.Stop();
+            Console.WriteLine("耗时:" + wt.ElapsedMilliseconds / 1000);
+            Console.WriteLine("写入成功率:" + writeSucCount / sum + ",写入失败率：" + writeFailedCount / sum);
+            Console.WriteLine("读取成功率:" + rSucCount / sum + ",读取失败率：" + rFailedCount / sum);
+            Console.WriteLine("删除成功率:" + dSucCount / sum + ",删除失败率：" + dFailedCount / sum);
 
-            //Console.WriteLine("All Keys:");
-            //CacheManger.Instance.GetAllKeys(CacheExpire.All).ForEach(x =>
-            //{
-            //    Console.WriteLine(x);
-            //}); 
+            Console.WriteLine("All Keys:");
+            CacheManger.Instance.GetAllKeys(CacheExpire.All).ForEach(x =>
+            {
+                Console.WriteLine(x);
+            }); 
             #endregion
             #endregion
 
