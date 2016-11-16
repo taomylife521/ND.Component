@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ND.Component.Config;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,32 +23,45 @@ namespace ND.Component.Caching
     public class CacheManger
     {
         private static CacheManger _instance = null;
+        private  ICache _cache;
+        private static readonly object _loadLock = new object();
 
-        private static ICache _cache { get; set; }
+        #region property
+        public  ICache cache
+        {
+            get
+            { 
+                return  NDComponentConfig.Instance.CacheProvider.Cache;
+            }
+           
+        }
         public static CacheManger Instance
         {
             get { return _instance; }
             private set { _instance = value; }
         }
+        #endregion
 
 
+      
+
+        private CacheManger()
+        {
+
+        }
         static CacheManger()
         {
-            Instance = new CacheManger();
+            if(_instance == null)
+            {
+                _instance = new CacheManger();
+            }
+           
         }
-        public static void InitCache(ICache cache)
-        {
-            _cache = cache;
-        }
+     
         public void RefreshCacheConfig(ICache cache)
         {
             _cache = cache;
-
         }
-        //public override bool SetValue<T>(string key, T value, DateTime expireDate)
-        //{
-        //    return _cache.SetValue(key, value, expireDate);
-        //}
 
         public  object GetValue(string key)
         {

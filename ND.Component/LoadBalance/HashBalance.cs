@@ -19,6 +19,9 @@ using System.Threading.Tasks;
 //**********************************************************************
 namespace ND.Component.LoadBalance
 {
+    /// <summary>
+    /// hash负载均衡算法实现
+    /// </summary>
     public class HashBalance : IBalance
     {
         public Server ChooseServer(List<Server> serviceconfiglist, string key)

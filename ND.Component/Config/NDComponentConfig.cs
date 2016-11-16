@@ -26,6 +26,7 @@ namespace ND.Component.Config
     public class NDComponentConfig : ConfigurationSection
     {
         public readonly static NDComponentConfig Instance=null;
+        private bool isThrowException=false;
         private NDComponentConfig()
         {
            
@@ -39,12 +40,36 @@ namespace ND.Component.Config
             }
            
          }
+        /// <summary>
+        /// 配置组建异常是否抛出异常
+        /// </summary>
+        public bool IsThrowConfigException { get { return isThrowException; } set { isThrowException = value; } }
+
+        /// <summary>
+        /// 负载均衡算法配置节点
+        /// </summary>
+        public BalanceConfigProvider BalanceProvider { get; set; }
+
+        /// <summary>
+        /// 缓存日志提供节点
+        /// </summary>
         public CacheConfigProvider CacheProvider { get; set; }
 
-        public MessageBusConfigProvider MessageBusProvider { get; set; }
 
+        /// <summary>
+        /// 日志配置节点
+        /// </summary>
         public LogConfigProvider LogProvider { get; set; }
 
+
+        /// <summary>
+        /// 消息总线配置节点
+        /// </summary>
+        public MessageBusConfigProvider MessageBusProvider { get; set; }
+
+        /// <summary>
+        /// 队列配置节点
+        /// </summary>
         public QueueConfigProvider QueueProvider { get; set; }
        
     }

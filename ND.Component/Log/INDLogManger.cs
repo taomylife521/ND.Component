@@ -28,9 +28,9 @@ namespace ND.Component.Log
     public interface INDLogManger
     {
 
-        INDLoggerFactory LogFactory { get; set; }
+        INDLoggerFactory LogFactory { get;  }
 
-        void Reset();
+     
 
         INDLogger GetCurrentClassLogger();
 

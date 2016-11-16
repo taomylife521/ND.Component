@@ -1,28 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<NDComponent>
-  <!--CacheProvider-->
-  <cacheprovider >
+<NDComponent isthrowconfigexception="false">
 
-    <!--当前节点只能有一个-->
+  <!--Log日志组件Provider-->
+  <!--当前节点只能有一个,type以逗号分隔[0]代表程序集名称 [1]代表类型名称-->
+  <logprovider type="ND.Component.Log.NLog,ND.Component.Log.NLog.NLogLoggerFactory" isenabled="true"/>
+
+  <!--负载均衡配置-->
+  <balanceprovider type="ND.Component.LoadBalance,ND.Component.LoadBalance.HashBalance" isenabled="true"/>
+  
+  <!--分布式缓存CacheProvider-->
+  <cacheprovider name="mongodb" type="ND.Component.MongoDB.Caching,ND.Component.MongoDB.Caching.MongoDBCache" isenabled="true" dbname="CacheDB" tablename="TestCache" islogging="true">
+
+    <!--分布式缓存,当前节点只能有一个-->
     <!--<provider name="redis" isenabled="false">
       <provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>
       <provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>
       <provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>
     </provider>-->
-    <provider name="mongodb" isenabled="true" dbname="CacheDB" tablename="TestCache" islogging="true">
-      <provideritem  connstr="mongodb://192.168.1.104:27017" weightvalue="1" isenabled="true"/>
-      <provideritem  connstr="mongodb://localhost:27017" weightvalue="1" isenabled="true"/>
-      <!--<provideritem  connstr="localhost:6379" weightvalue="1" isenabled="true"/>-->
-    </provider>
+      <cacheitem  connstr="mongodb://192.168.1.104:27017" weightvalue="1" isenabled="true"/>
+      <cacheitem  connstr="mongodb://localhost:27017" weightvalue="1" isenabled="true"/>
   </cacheprovider>
+  
+  
 
-  <logprovider>
-    <!--当前节点只能有一个,type以逗号分隔[0]代表程序集名称 [1]代表类型名称-->
-    <!--<logfactory type="ND.Component.Log.Log4Net,Log4NetLoggerFactory" isenabled="true"/>-->
-    <logfactory type="ND.Component.Log.NLog,NLogLoggerFactory" isenabled="true"/>
-  </logprovider>
+    
 
-  <!--MessageBusComponent-->
+  <!--消息总线MessageBusComponentProvider-->
   <messagebusprovider>
     <!--name:组件名称（纯小写） isenabled:true为启用，false为禁用 islogging：true为记录日志 false为不记录-->
     <messagebusprovider name="rabbitmq" isenabled="true" islogging="true">

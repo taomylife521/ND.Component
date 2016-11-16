@@ -48,12 +48,12 @@ namespace ND.Component.Caching
 
         public Server ChooseServer(string key)
         {
-           return LoadBalanceFactory.ChooseServer(serverConfig, key);
+            return LoadBalanceManger.Instance.ChooseServer(serverConfig, key);
         }
 
         public string ChooseServerConnStr(string key)
         {
-            return LoadBalanceFactory.ChooseServer(serverConfig, key).ConnStr;
+            return LoadBalanceManger.Instance.ChooseServer(serverConfig, key).ConnStr;
         }
 
         /// <summary>

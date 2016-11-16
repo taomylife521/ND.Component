@@ -22,8 +22,6 @@ namespace ND.Component.Config
    public interface IConfigBuilder
     {
        void Build();
-       void RefreshLogConfigProvider();
-       void RefreshCacheConfigProvider();
     }
 
     

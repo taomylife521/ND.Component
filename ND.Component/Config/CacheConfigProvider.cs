@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ND.Component.Caching;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,8 +28,15 @@ namespace ND.Component.Config
         private bool isLogging = false;
         public CacheConfigProvider()
         {
-            CacheItem = new List<CacheProviderItem>();
+            CacheItem = new List<CacheItem>();
         }
+       
+
+        /// <summary>
+        /// 类型名称
+        /// </summary>
+        public string Type { get; set; }
+
         /// <summary>
         /// 缓存数据库名称
         /// </summary>
@@ -45,8 +53,13 @@ namespace ND.Component.Config
         public bool IsLogging { get { return isLogging; } set { isLogging = value; } }
 
         /// <summary>
+        /// 缓存对象
+        /// </summary>
+        public ICache Cache { get; set; }
+
+        /// <summary>
         /// 缓存服务器列表
         /// </summary>
-        public List<CacheProviderItem> CacheItem { get; set; }
+        public List<CacheItem> CacheItem { get; set; }
     }
 }

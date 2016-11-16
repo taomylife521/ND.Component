@@ -19,6 +19,9 @@ using System.Threading.Tasks;
 //**********************************************************************
 namespace ND.Component.LoadBalance
 {
+    /// <summary>
+    /// 动态权重轮询算法
+    /// </summary>
     public class WeightedRoundBalance:IBalance
     {
         public Server ChooseServer(List<Server> serviceconfiglist, string key)
