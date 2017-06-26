@@ -31,7 +31,7 @@ namespace ND.Component.RabbitMQ.MessageBus
     /// <summary>
     /// RabbitMQ 总线
     /// </summary>
-    public class RabbitMQMessageBus : MessageBusBase, IMessageBus
+    public class RabbitMQMessageBus : MessageBusBase
     {
         private readonly string _queueName;
         private readonly string _routingKey;
