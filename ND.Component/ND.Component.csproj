@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,9 +51,11 @@
     <Compile Include="Caching\CacheManger.cs" />
     <Compile Include="Caching\CacheStatus.cs" />
     <Compile Include="Caching\ICache.cs" />
+    <Compile Include="Caching\InMemoryCache.cs" />
     <Compile Include="Caching\NullCache.cs" />
     <Compile Include="ComponentBuilder\DefaultComponentBuilder.cs" />
     <Compile Include="ComponentBuilder\IComponentBuilder.cs" />
+    <Compile Include="Configurations\NdConfiguration.cs" />
     <Compile Include="Config\ComponentMangerProvider.cs" />
     <Compile Include="Config\BalanceConfigProvider.cs" />
     <Compile Include="Config\CacheConfigProvider.cs" />
@@ -77,9 +80,7 @@
     <Compile Include="Log\INDLoggerFactory.cs" />
     <Compile Include="Log\AbsNDLogger.cs" />
     <Compile Include="Log\INDLoggerExtensions.cs" />
-    <Compile Include="Log\INDLogManger.cs" />
     <Compile Include="Log\NDLogLevel.cs" />
-    <Compile Include="Log\NDLogManger.cs" />
     <Compile Include="Log\NullNDLogger.cs" />
     <Compile Include="Log\NullNDLoggerFactory.cs" />
     <Compile Include="MessageBus\IMessageBus.cs" />
@@ -89,6 +90,11 @@
     <Compile Include="MessageBus\MessageBusData.cs" />
     <Compile Include="MessageBus\NullMessageBus.cs" />
     <Compile Include="Config\IComponentManger.cs" />
+    <Compile Include="Components\IObjectContainer.cs" />
+    <Compile Include="Components\LifeStyle.cs" />
+    <Compile Include="Components\ObjectContainer.cs" />
+    <Compile Include="Serializing\IJsonSerializer.cs" />
+    <Compile Include="Serializing\NotImplementedJsonSerializer.cs" />
     <Compile Include="Utility\EmptyDisposable.cs" />
     <Compile Include="Utility\MaintenanceBase.cs" />
     <Compile Include="Config\NDComponentConfig.cs" />
@@ -99,9 +105,13 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Log\packages.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="dll\Autofac.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="dll\Newtonsoft.Json.dll" />
     <Content Include="NDComponent.xml" />
   </ItemGroup>

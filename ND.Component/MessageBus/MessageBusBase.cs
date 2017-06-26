@@ -23,9 +23,9 @@ using System.Threading.Tasks;
 //**********************************************************************
 namespace ND.Component.MessageBus
 {
-    public abstract class MessageBusBase :MaintenanceBase, IMessageBus 
+    public abstract class MessageBusBase :MaintenanceBase, IMessageBus
     {
-        public INDLogger logger = NDLogManger.Instance.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public INDLogger logger = null; //NDLogManger.Instance.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         protected readonly ConcurrentDictionary<string, Subscriber> _subscribers = new ConcurrentDictionary<string, Subscriber>();
         public MessageBusBase()
         { 

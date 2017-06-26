@@ -30,6 +30,7 @@ namespace ND.Component.Config
        /// </summary>
         public void Build()
         {
+            
             XElement root = XElement.Load(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NDComponent.xml"));
             NDComponentConfig.Instance.IsThrowConfigException =Convert.ToBoolean(root.Attribute("isthrowconfigexception").Value.NotEmpty("true"));
             NDComponentConfig.Instance.BalanceProvider = BuildBlanceProvider(root); 
@@ -90,7 +91,12 @@ namespace ND.Component.Config
 
                 string assemblyName = provider.Type.Split(',')[0];
                 string typeName = provider.Type.Split(',')[1];
-                Type type = Type.GetType(typeName+","+assemblyName);
+                
+                if (typeName == "ND.Component.Caching.InMemoryCache")
+                {
+                    return new InMemoryCache();
+                }
+                Type type = Type.GetType(typeName + "," + assemblyName);
                 return (ICache)Activator.CreateInstance(type);
             }
             catch (Exception ex)
