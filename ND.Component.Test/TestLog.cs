@@ -32,10 +32,10 @@ namespace ND.Component.Test
 {
     public class TestLog
     {
-        INDLogger logger = NDLogManger.Instance.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+       // INDLogger logger = NDLogManger.Instance.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public void TestLog2()
          {
-             logger.Info("i am testlog");
+            // logger.Info("i am testlog");
          }
     }
 }

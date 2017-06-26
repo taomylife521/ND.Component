@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\ND.Component.Autofac\dll\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\ND.Component.Log.Log4Net\dll\log4net.dll</HintPath>
     </Reference>
@@ -73,6 +76,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ND.Component.Autofac\ND.Component.Autofac.csproj">
+      <Project>{606412f9-752d-4673-8a7b-4f741da2d6ee}</Project>
+      <Name>ND.Component.Autofac</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ND.Component.Log.Log4Net\ND.Component.Log.Log4Net.csproj">
       <Project>{02153f38-be2b-4356-b23a-b0ef7161fc1a}</Project>
       <Name>ND.Component.Log.Log4Net</Name>
