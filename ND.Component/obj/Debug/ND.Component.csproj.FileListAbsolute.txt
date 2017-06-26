@@ -15,3 +15,5 @@ D:\My Folder\My GitHub\ND.Component\ND.Component\bin\Debug\ND.Component.pdb
 D:\My Folder\My GitHub\ND.Component\ND.Component\bin\Debug\Newtonsoft.Json.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component\obj\Debug\ND.Component.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component\obj\Debug\ND.Component.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component\bin\Debug\dll\Autofac.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component\obj\Debug\ND.Component.csprojResolveAssemblyReference.cache

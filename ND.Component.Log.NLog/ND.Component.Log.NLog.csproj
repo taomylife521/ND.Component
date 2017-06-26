@@ -42,8 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NdConfigurationExtention.cs" />
     <Compile Include="NLogLogger.cs" />
-    <Compile Include="NLogLoggerFactory.cs" />
+    <Compile Include="NLogLoggerFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

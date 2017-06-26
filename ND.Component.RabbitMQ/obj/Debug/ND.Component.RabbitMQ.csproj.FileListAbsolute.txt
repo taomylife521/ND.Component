@@ -16,3 +16,4 @@ D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\ND.Component
 D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.csprojResolveAssemblyReference.cache
 D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\obj\Debug\ND.Component.RabbitMQ.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.RabbitMQ\bin\Debug\dll\Autofac.dll

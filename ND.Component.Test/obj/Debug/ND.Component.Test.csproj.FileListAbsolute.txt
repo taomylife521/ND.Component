@@ -60,3 +60,8 @@ D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Mon
 D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\MongoDB.Driver.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\MongoDB.Bson.dll
 D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\ND.Component.MongoDB.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\Autofac.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Autofac.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\ND.Component.Autofac.pdb
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\dll\Autofac.dll
+D:\My Folder\My GitHub\ND.Component\ND.Component.Test\bin\Debug\dll\log4net.dll

@@ -62,7 +62,7 @@ namespace ND.Component.MongoDB.Caching
                 {
                     if (!collection.IndexExists(new IndexKeysBuilder().Ascending("ExpireDate")))
                     {
-                        collection.EnsureIndex(new IndexKeysBuilder().Ascending("ExpireDate"), IndexOptions.SetTimeToLive(timespan));
+                        collection.EnsureIndex(new IndexKeysBuilder().Ascending("ExpireDate"),IndexOptions.SetTimeToLive(timespan));// IndexOptions.SetTimeToLive(timespan)
                     }
                 }
                 OnOperating("写入完成end:key:" + key + ",serverConnstr:" + server.connstr + ",result:" + res.Ok + "," + res.ErrorMessage);

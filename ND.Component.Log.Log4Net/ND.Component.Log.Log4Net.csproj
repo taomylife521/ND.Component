@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Log4NetLoggerFactory.cs" />
+    <Compile Include="NdConfigurationExtention.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,7 +55,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dll\log4net.dll" />
+    <EmbeddedResource Include="dll\log4net.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="log4net.config" />

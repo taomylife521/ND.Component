@@ -38,3 +38,4 @@ D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusPublisher\bin\
 D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusPublisher\obj\Debug\ND.Component.MessageBusPublisher.csprojResolveAssemblyReference.cache
 D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusPublisher\obj\Debug\ND.Component.MessageBusPublisher.exe
 D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusPublisher\obj\Debug\ND.Component.MessageBusPublisher.pdb
+D:\My Folder\My GitHub\ND.Component\Sample\ND.Component.MessageBusPublisher\bin\Debug\dll\Autofac.dll

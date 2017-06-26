@@ -1,9 +1,13 @@
 ﻿using NLog;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NLog.Config;
+using NLog.Layouts;
+using NLog.Targets;
 
 //**********************************************************************
 //
@@ -22,6 +26,31 @@ namespace ND.Component.Log.NLog
 {
     public class NLogLoggerFactory : AbsNDLoggerFactory
     {
+        public NLogLoggerFactory()
+        {
+            
+
+        }
+        public NLogLoggerFactory(string configFile)
+        {
+            var file = new FileInfo(configFile);
+            if (!file.Exists)
+            {
+                file = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, configFile));
+            }
+
+            if (file.Exists)
+            {
+                //XmlLoggingConfiguration. 
+                //XmlConfigurator.ConfigureAndWatch(file);
+                XmlLoggingConfiguration.SetCandidateConfigFilePaths(new List<string>(){configFile});
+            }
+            else
+            {
+                SimpleConfigurator.ConfigureForTargetLogging(new ConsoleTarget() { Layout = new SimpleLayout() });
+            }
+            
+        }
         protected override INDLogger CreateLogger(string name)
         {
            return new NLogLogger(name);
